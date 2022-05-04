@@ -1,41 +1,26 @@
 ﻿using System;
 
-namespace EjercicioPropuestoPairPDia01
+namespace Ejercicio_15
 {
     class Program
     {
         static void Main(string[] args)
         {
-            /*Un comercio tiene una promocion: si el precio total de compra es igual o superior a 10000,
-            el precio tiene un descuento del 20 %.
-            Realizar un metodo para tomar el precio de compra total como argumento y que nos calcule y devuelva
-            el precio con descuento si se cumple la promocion.
-            Dato adicional: el metodo debe devolver el mismo  precio si no se cumple el descuento */
+            double costoTotal, costoComprador, ganancia, impuestos = 0; 
 
+            Console.WriteLine("Ingrese el valor total del vehículo: ");
 
-           Console.WriteLine("Bienvenido! \nIntroduzca el precio total de la compra:");
-            int totalPrice = Convert.ToInt32(Console.ReadLine());
+            costoTotal = double.Parse(Console.ReadLine());
 
-            //llamamos al metodo descuento
-            Console.WriteLine(Discount(totalPrice));
-        }
-        //Creamos el metodo descuento
-        static int Discount(double t)
-        {
-            if (t >= 10000)
-            {
-                Console.Write("Este es el precio con descuento de su compra: ");
-                //Realizamos el descuento del 20% sobre el precio y lo retornamos como entero
-                t = t - (0.2 * t);
-                return Convert.ToInt32(t);
+            ganancia = costoTotal * 0.12;
 
-            }
-            else
-            {
-                //Como no tiene descuento devolvemos el precio original
-                Console.WriteLine("Su compra no tiene descuento :");
-                return Convert.ToInt32(t);
-            }
+            impuestos = costoTotal * 0.06;
+
+            costoComprador = costoTotal + ganancia + impuestos;
+
+            Console.WriteLine("El costo  del consumidor es: " + costoComprador);
+
+            Console.ReadKey();
 
 
         }
